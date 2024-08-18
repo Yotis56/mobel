@@ -4,7 +4,6 @@ import styles from './styles.module.css'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    console.log(styles)
 
     const handleOpenMenu = () => {
         setIsMenuOpen(true)

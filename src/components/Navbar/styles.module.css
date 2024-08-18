@@ -1,7 +1,7 @@
 .navbar {
+    position: relative;
     display: flex;
-    width: 80%;
-    margin: 30px auto 0;
+    padding: 30px 10% 0;
     justify-content: space-between;
 }
 .logoContainer  img{
