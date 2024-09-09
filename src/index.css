@@ -1,3 +1,10 @@
+:root {
+  --orange: #f18821;
+  --black-grey: #303031;
+  --cream: #faedb7;
+  
+}
+
 #root {
   overflow: hidden;
 }
