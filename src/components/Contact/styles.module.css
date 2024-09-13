@@ -1,0 +1,61 @@
+.contactContainer{
+    display: flex;
+}
+.contactLeft{
+    max-width: 35%;
+    padding: 8%;
+}
+.contactLeft img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.contactRight{
+    margin: 5% 8% 8% 0;
+    width: 100%;
+}
+.contactRight h3 {
+    text-align: center;
+}
+.inputContainer{
+    margin-bottom: 10px;
+}
+.inputContainer label {
+    display: block;
+    font-size: 12px;
+}
+.inputContainer:focus-within label {
+    font-size: 14px;
+    color: var(--black-grey);
+    transition: all 300ms ease-in;
+}
+.inputContainer input {
+    width: 100%;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #444;
+    outline: none;
+}
+.inputContainer:last-child textarea {
+    height: 75px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #555;
+    margin: 10px 0px;
+    /* box-sizing: border-box; */
+    font-family: sans-serif;
+    color: black;
+    resize: vertical;
+}
+.submitButton {
+    outline: none;
+    width: 200px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--black-grey);
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}

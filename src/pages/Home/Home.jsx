@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import emailjs from '@emailjs/browser'
-import { Header } from "../../components/Header"
+import { Header } from "../../components/Header/Header"
 import { Contact } from "../../components/Contact/Contact"
 
 const Home = () => {

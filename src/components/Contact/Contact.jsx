@@ -1,5 +1,7 @@
 import { useState } from "react"
 import emailjs from '@emailjs/browser'
+import contactImg from '../../assets/contactUs-800.jpg'
+import styles from './styles.module.css'
 
 const Contact = () => {
     const [data, setData] = useState({
@@ -19,34 +21,43 @@ const Contact = () => {
     const handleSubmit = async () => {
         try {
             const response = await emailjs.send('mobel_contact_service', 'contact_form', data, )
-            console.log(response)
             window.alert('Se ha enviado su información de contacto con éxito')
         } catch (error) {
+            console.error(error)
             window.alert('No se ha podido enviar su información de contacto. Por favor intente más tarde')
         }
     }
 
     return (
-        <div className="contactContainer">
-            <div className="contact-left">
-                <p>Acá iría una imagen bien perrona</p>
+        <div className={styles.contactContainer}>
+            <div className={styles.contactLeft}>
+                <img src={contactImg} alt="Mujer hablando al teléfono" />
             </div>
-            <div className="contact-right">
+            <div className={styles.contactRight}>
                 <h3>Contáctanos</h3>
                 <form>
-                    <label htmlFor="name">Nombre</label>
-                    <input type="text" name="name" id="name" value={data.name} onChange={handleChange}/>
-                    <label htmlFor="last_name">Apellid</label>
-                    <input type="tel" name="last_name" id="last_name" value={data.last_name} onChange={handleChange} />
-                    <label htmlFor="phone">Teléfono</label>
-                    <input type="text" name="phone" id="phone" value={data.phone} onChange={handleChange} />
-                    <label htmlFor="description">Describe tu proyecto</label>
-                    <input type="text" name="description" id="description" value={data.description} onChange={handleChange} />
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="name">Nombre</label>
+                        <input type="text" name="name" id="name" value={data.name} onChange={handleChange}/>
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="last_name">Apellido</label>
+                        <input type="tel" name="last_name" id="last_name" value={data.last_name} onChange={handleChange} />
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="phone">Teléfono</label>
+                        <input type="text" name="phone" id="phone" value={data.phone} onChange={handleChange} />
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="description">Describe tu proyecto</label>
+                        <textarea type="text" name="description" id="description" value={data.description} onChange={handleChange} />
+                    </div>
                 </form>
-                <button onClick={handleSubmit}>Enviar</button>
+                <button onClick={handleSubmit} className={styles.submitButton}>Enviar</button>
             </div>
         </div>
     )
 }
 
 export { Contact }
+
