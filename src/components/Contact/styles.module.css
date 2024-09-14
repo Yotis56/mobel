@@ -1,16 +1,11 @@
 .contactContainer{
     display: flex;
 }
-.contactLeft{
-    max-width: 35%;
-    padding: 8%;
-}
-.contactLeft img {
-    max-width: 100%;
-    border-radius: 10px;
+.contactLeft, .contactLeft img {
+    display: none;
 }
 .contactRight{
-    margin: 5% 8% 8% 0;
+    margin: 5% 8% 8%;
     width: 100%;
 }
 .contactRight h3 {
@@ -22,11 +17,6 @@
 .inputContainer label {
     display: block;
     font-size: 12px;
-}
-.inputContainer:focus-within label {
-    font-size: 14px;
-    color: var(--black-grey);
-    transition: all 300ms ease-in;
 }
 .inputContainer input {
     width: 100%;
@@ -58,4 +48,28 @@
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
+}
+.buttonContainer {
+    text-align: center;
+}
+@media screen and (min-width: 426px ) {
+    .contactLeft, .contactLeft img {
+        display: initial;
+    }
+    .contactLeft {
+        max-width: 35%;
+        padding: 8%;
+    }
+    .contactLeft img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    .contactRight{
+        margin: 5% 8% 8% 0;
+    }
+    .inputContainer:focus-within label {
+        font-size: 14px;
+        color: var(--black-grey);
+        transition: all 300ms ease-in;
+    }
 }

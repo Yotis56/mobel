@@ -53,7 +53,9 @@ const Contact = () => {
                         <textarea type="text" name="description" id="description" value={data.description} onChange={handleChange} />
                     </div>
                 </form>
-                <button onClick={handleSubmit} className={styles.submitButton}>Enviar</button>
+                <div className={styles.buttonContainer}>
+                    <button onClick={handleSubmit} className={styles.submitButton}>Enviar</button>
+                </div>
             </div>
         </div>
     )
@@ -61,3 +63,4 @@ const Contact = () => {
 
 export { Contact }
 
+// Recordar que estoy diseñando mobile-first. Cómo se debería ver la sección de contacto en móvil. ¿Sin la imagen?
