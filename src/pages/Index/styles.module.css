@@ -1,0 +1,60 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+.imageContainer{
+    height: 50%;
+    position: relative;
+    background-color: #00000096;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 300ms;
+} 
+.backgroundImage{
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.iconLeft, .iconRight {
+    height: 45px;
+}
+.iconLeft{
+    transform: rotate(45deg);
+}
+.iconRight{
+    transform: rotate(-45deg);
+}
+.textContainer{
+    text-align: center;
+}
+.link {
+    text-decoration: none;
+}
+.textContainer p {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: 3px;
+}
+@media screen and (min-width: 430px) {
+    .container {
+        display: flex;
+    }
+    .link {
+        width: 50vw;
+    }
+    .imageContainer {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+@media screen and (min-width: 768px) {
+    .imageContainer {
+        cursor: pointer ;
+    }
+     .imageContainer:hover {
+        transform: scale(1.2, 1.2);
+        z-index: 1;
+    }
+}
