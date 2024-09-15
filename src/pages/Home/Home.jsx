@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import emailjs from '@emailjs/browser'
 import { Header } from "../../components/Header/Header"
 import { Contact } from "../../components/Contact/Contact"
+import { Segments } from "../../components/Segments/Segments"
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
     return (
       <>
         <Header />
+        <Segments />
         <Contact />
       </>
     )
