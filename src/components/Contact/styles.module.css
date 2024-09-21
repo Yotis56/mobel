@@ -11,32 +11,6 @@
 .contactRight h3 {
     text-align: center;
 }
-.inputContainer{
-    margin-bottom: 10px;
-}
-.inputContainer label {
-    display: block;
-    font-size: 12px;
-}
-.inputContainer input {
-    width: 100%;
-    height: 25px;
-    border: none;
-    border-bottom: 1px solid #444;
-    outline: none;
-}
-.inputContainer:last-child textarea {
-    height: 75px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #555;
-    margin: 10px 0px;
-    /* box-sizing: border-box; */
-    font-family: sans-serif;
-    color: black;
-    resize: vertical;
-}
 .submitButton {
     outline: none;
     width: 200px;
@@ -66,10 +40,5 @@
     }
     .contactRight{
         margin: 5% 8% 8% 0;
-    }
-    .inputContainer:focus-within label {
-        font-size: 14px;
-        color: var(--black-grey);
-        transition: all 300ms ease-in;
     }
 }
