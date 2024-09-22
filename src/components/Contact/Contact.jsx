@@ -1,18 +1,24 @@
 import { FormProvider, useForm } from "react-hook-form"
+import ReCAPTCHA from 'react-google-recaptcha'
 import emailjs from '@emailjs/browser'
 import { Input } from "../Input/input"
 import { nameValidation, lastNameValidation, phoneValidation, descriptionValidation } from './validationObjects'
 import contactImg from '../../assets/contactUs-800.jpg'
 import styles from './styles.module.css'
+import { useRef, useState } from "react"
 
 
 const Contact = () => {
     
     const methods = useForm()
+    const captchaRef = useRef(null)
+
+    const [captchaToken, setcaptchaToken] = useState(null)
     const onSubmit = methods.handleSubmit( async (data)=> {
-        // console.log('se envía la info al correo', data)
         try {
-            const response = await emailjs.send('mobel_contact_service', 'contact_form', data, )
+            const response = await emailjs.send('mobel_contact_service', 'contact_form', 
+                {...data, 'g-recaptcha-response': captchaToken}, 
+            )
             window.alert('Se ha enviado su información de contacto con éxito')
         } catch (error) {
             console.error(error)
@@ -34,8 +40,14 @@ const Contact = () => {
                         <Input label='Apellido' type='text' id='last_name' validation={lastNameValidation}/>
                         <Input label='Teléfono' type='tel' id='phone' validation={phoneValidation}/>
                         <Input label='Describe tu proyecto' type='text' id='description' validation={descriptionValidation} multiline={true}/>
+                        <ReCAPTCHA 
+                            sitekey="6Lc2NEsqAAAAAPpeoIivs_ClOUFYD3N6G9XCZJVt" 
+                            ref={captchaRef}
+                            onChange={(val) => setcaptchaToken(val)}
+                            className={styles.captchaContainer}
+                        />
                         <div className={styles.buttonContainer}>
-                            <button type="submit" className={styles.submitButton} onClick={onSubmit}>Enviar</button>
+                            <button type="submit" className={styles.submitButton} onClick={onSubmit} disabled={!captchaToken}>Enviar</button>
                         </div>
                     </form>
                 </FormProvider>

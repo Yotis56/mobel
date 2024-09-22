@@ -23,8 +23,18 @@
     font-size: 16px;
     cursor: pointer;
 }
+.submitButton:disabled {
+    cursor: initial;
+    background-color: #989898;
+    color: var(--black-grey);
+}
 .buttonContainer {
     text-align: center;
+}
+.captchaContainer {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0;
 }
 @media screen and (min-width: 426px ) {
     .contactLeft, .contactLeft img {
