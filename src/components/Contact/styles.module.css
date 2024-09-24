@@ -36,7 +36,7 @@
     justify-content: center;
     margin: 6px 0;
 }
-@media screen and (min-width: 426px ) {
+@media screen and (min-width: 450px ) {
     .contactLeft, .contactLeft img {
         display: initial;
     }
