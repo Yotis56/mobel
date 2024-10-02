@@ -3,9 +3,10 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import emailjs from '@emailjs/browser'
 import { Input } from "../Input/input"
 import { nameValidation, lastNameValidation, phoneValidation, descriptionValidation } from './validationObjects'
-import contactImg from '../../assets/contactUs-800.jpg'
+import contactImg from '../../assets/images/contactUs-800.jpg'
 import styles from './styles.module.css'
-import { useRef, useState } from "react"
+import { useContext, useRef, useState } from "react"
+import { AppContext } from "../../context/AppContext"
 
 
 const Contact = () => {
@@ -24,13 +25,17 @@ const Contact = () => {
             console.error(error)
             window.alert('No se ha podido enviar su información de contacto. Por favor intente más tarde')
         }
-        
-    }) 
+    })
+
+    const width = useContext(AppContext)
 
     return (
-        <div className={styles.contactContainer}>
+        <div className={styles.contactContainer} id="contact">
             <div className={styles.contactLeft}>
-                <img src={contactImg} alt="Mujer hablando al teléfono" />
+                {
+                    width > 650 &&
+                    <img src={contactImg} alt="Mujer hablando al teléfono" />
+                }
             </div>
             <div className={styles.contactRight}>
                 <h3>Contáctanos</h3>

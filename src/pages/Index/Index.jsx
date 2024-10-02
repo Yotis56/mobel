@@ -1,8 +1,8 @@
-import styles from './styles.module.css'
-import Home from '../../assets/Home.jpg'
-import Office from '../../assets/Office.jpg'
-import Logo from '../../assets/logoSimp.png'
 import { Link } from 'react-router-dom'
+import Home from '../../assets/images/Home.jpg'
+import Office from '../../assets/images/Office.jpg'
+import Logo from '../../assets/images/logoSimp.png'
+import styles from './styles.module.css'
 
 const Index = () => {
     return (

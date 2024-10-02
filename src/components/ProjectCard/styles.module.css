@@ -1,0 +1,27 @@
+.card {
+    position: relative;
+    margin-bottom: 15px;
+}
+.card img {
+    width: 100%;
+}
+.card p {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    color: white;
+    text-shadow: -1px 0px 1px black;
+}
+@media screen and (min-width: 769px){
+    .card {
+        width: 30%;
+        height: 250px;
+        overflow: hidden;
+    }
+    .card img {
+        width: auto;
+        height: 100%;
+    }
+}

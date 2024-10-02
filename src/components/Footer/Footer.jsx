@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
-import instagramIcon from '../../assets/instagram.png'
-import tiktokIcon from '../../assets/tik-tok.png'
-import mobbelIcon from '../../assets/logo.png'
+import instagramIcon from '../../assets/images/instagram.png'
+import tiktokIcon from '../../assets/images/tik-tok.png'
+import mobbelIcon from '../../assets/images/logo.png'
 
 const Footer = () => {
     return (
@@ -27,10 +27,10 @@ const Footer = () => {
                 <p>síguenos en nuestras redes sociales:</p>
                 <div className="mediaLinks">
                     <a href="https://www.instagram.com/mobel_studio_sas/">
-                        <img className={styles.socialIcon} src={instagramIcon} alt="instagram Icon" />
+                        <img className={styles.socialIcon} src={instagramIcon} alt="instagram Icon" loading="lazy" />
                     </a>
                     <a href="https://www.tiktok.com/@mobel.studio4?lang=es">
-                        <img className={styles.socialIcon} src={tiktokIcon} alt="TikTok Icon" />
+                        <img className={styles.socialIcon} src={tiktokIcon} alt="TikTok Icon" loading="lazy" />
                     </a>
                 </div>
             </div>

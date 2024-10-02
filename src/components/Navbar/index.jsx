@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/images/logo.png'
 import styles from './styles.module.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,9 +21,9 @@ const Navbar = () => {
             <div className={ isMenuOpen ? `${styles.navbarContainer} ${styles.active}` : styles.navbarContainer }>
                 <ul>
                     <li>Home</li>
-                    <li>Proyectos</li>
-                    <li>Catálogos</li>
-                    <li>Contáctanos</li>
+                    <li><Link to='/in-construction'>Proyectos</Link></li>
+                    <li><Link to='/in-construction'>Catálogos</Link></li>
+                    <li><a href="#contact">Contáctanos</a></li>
                 </ul>
                 <span className={`material-symbols-outlined ${styles.closeIcon}`} onClick={handleCloseMenu}>close</span>
             </div>

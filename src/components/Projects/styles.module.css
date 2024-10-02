@@ -1,0 +1,12 @@
+.projectsContainer{
+    margin: 0 8%;
+}
+.projectsContainer h3{
+    text-align: center;
+    font-weight: 500;
+    color: var(--black-grey);
+}
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -37,7 +37,7 @@
     color: white;
     margin: 3px;
 }
-@media screen and (min-width: 430px) {
+@media screen and (min-width: 450px) {
     .container {
         display: flex;
     }

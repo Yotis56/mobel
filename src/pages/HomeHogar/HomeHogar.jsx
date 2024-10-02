@@ -1,22 +1,22 @@
-import { useEffect } from "react"
-import emailjs from '@emailjs/browser'
+import { useContext } from "react"
 import { Header } from "../../components/Header/Header"
 import { Contact } from "../../components/Contact/Contact"
-import heroImage from '../../assets/Kitchen1-1024.jpg'
+import { WaButton } from '../../components/WaButton/WaButton'
+import heroImage from '../../assets/images/Kitchen1-1024.jpg'
+import heroImageSmall from '../../assets/images/Kitchen1-768.jpg'
+import { AppContext } from "../../context/AppContext"
 
 const HomeHogar = () => {
+  
+  const width = useContext(AppContext)
 
-  useEffect(() => {
-    emailjs.init({
-      publicKey: 'px67tiu5cXBv6yCRY'
-    })  
-  }, [])
   const title = '¿Tienes una remodelación pendiente?'
   const paragraph = 'Somos una empresa de diseño de interiores y mobiliario, expertos en remodelaciones de espacios.'
     return (
       <>
-        <Header image={heroImage} title={title} paragraph={paragraph} />
+        <Header image={width > 768? heroImage : heroImageSmall} title={title} paragraph={paragraph} />
         <Contact />
+        <WaButton />
       </>
     )
 }

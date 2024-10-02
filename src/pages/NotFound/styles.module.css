@@ -1,0 +1,23 @@
+.notFound{
+    text-align: center;
+}
+.notFound img {
+    width: 80vw;
+}
+.notFound button {
+    outline: none;
+    width: 200px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--black-grey);
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+@media screen and (min-width: 450px) {
+    .notFound img {
+        width: 50vw;
+    }
+}
