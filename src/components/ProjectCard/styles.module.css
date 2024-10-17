@@ -1,6 +1,7 @@
 .card {
     position: relative;
     margin-bottom: 15px;
+    text-align: center;
 }
 .card img {
     width: 100%;

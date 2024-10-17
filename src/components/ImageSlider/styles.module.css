@@ -15,7 +15,8 @@
 }
 /* Tengo que cambiar el alto y ancho para ajustarme a una relación de aspecto específica. Y recortar todas las fotos para que tengan esa relación de aspecto. Y además, se vea lo que quiero mostrar. */
 .next,
-.prev {
+.prev, 
+.close {
     top: calc(50% - 20px);
     position: absolute;
     width: 40px;
@@ -38,6 +39,13 @@
 
 .prev {
     left: 10px;
+}
+.close {
+    top: 5px;
+    right: 5px;
+}
+.close span {
+    font-size: 30px;
 }
 @media screen and (min-width: 650px) {
     .container {

@@ -6,6 +6,7 @@ import { HomeCorporativo } from '../pages/HomeCorporativo/HomeCorporativo'
 import { Construction } from '../pages/Construction/Construction'
 import {NotFound } from '../pages/NotFound/NotFound'
 import { ProjectsHogar } from '../pages/ProjectsHogar/ProjectsHogar'
+import { ProjectsCorporativo } from '../pages/ProjectsCorporativo/ProjectsCorporativo'
 
 
 const App = createBrowserRouter(
@@ -16,6 +17,7 @@ const App = createBrowserRouter(
         <Route path='/hogar' element={<HomeHogar />} />
         <Route path='/hogar/proyectos' element={<ProjectsHogar />} />       
         <Route path='/corporativo' element={<HomeCorporativo />} />    
+        <Route path='/corporativo/proyectos' element={<ProjectsCorporativo />} />       
       </Route>
       <Route path='/in-construction' element={<Construction />} />
       <Route path='*' element={<NotFound />} />

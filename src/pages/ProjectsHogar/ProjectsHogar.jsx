@@ -1,6 +1,7 @@
 import exampleImage from '../../assets/images/Kitchen1-1024.jpg'
 import { Header } from "../../components/Header/Header"
 import { Projects } from "../../components/Projects/Projects"
+import { projectsListHogar } from './projectsListHogar'
 
 const ProjectsHogar = () => {
     const title = 'título de ejemplo'
@@ -8,7 +9,7 @@ const ProjectsHogar = () => {
     return (
         <>
             <Header image={exampleImage} title={title} paragraph={paragraph} />
-            <Projects />
+            <Projects projectsList={projectsListHogar} title='Proyectos Hogar'/>
         </>
     )
 }

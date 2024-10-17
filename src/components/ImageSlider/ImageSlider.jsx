@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import styles from './styles.module.css'
@@ -28,12 +28,29 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export const ImageSlider = ({ images }) => {
+export const ImageSlider = ({ images, setViewModal = null}) => {
     const [[page, direction], setPage] = useState([0, 0])
     const imageIndex = wrap(0, images.length, page)
     const paginate = (newDirection) => {
-        setPage([page + newDirection, newDirection]);
+        setPage( p => [p[0] + newDirection, newDirection]);
     }
+
+    useEffect( () => {
+      const handleKeyDown = e => {
+        if (e.key === 'ArrowRight') {
+          paginate(1)
+        }
+        if (e.key === 'ArrowLeft') {
+         paginate(-1)
+        } else if (e.key === 'Escape') {
+          setViewModal(false)
+        }
+      }
+      document.addEventListener('keydown', handleKeyDown)
+
+      return () => {document.removeEventListener('keydown', handleKeyDown)}
+    }, [])
+
 
     return (
         <div className={styles.container}>
@@ -70,6 +87,13 @@ export const ImageSlider = ({ images }) => {
           <div className={styles.prev} onClick={() => paginate(-1)}>
             <span className="material-symbols-outlined">arrow_back_ios</span>
           </div>
+          {
+            setViewModal && 
+            <div className={styles.close} onClick={() => setViewModal(false)}>
+              <span className="material-symbols-outlined">close</span>
+            </div>
+
+          }
         </div>
       )
 }

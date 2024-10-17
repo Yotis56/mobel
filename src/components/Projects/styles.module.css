@@ -1,5 +1,6 @@
 .projectsContainer{
     margin: 0 8%;
+    cursor: pointer;
 }
 .projectsContainer h3{
     text-align: center;
@@ -9,4 +10,5 @@
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }

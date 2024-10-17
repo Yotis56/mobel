@@ -26,7 +26,7 @@ const ProjectCard = ({title, images}) => {
         {
             viewModal &&
             <Modal setViewModal={setViewModal}>
-                <ImageSlider images={images}/>  
+                <ImageSlider images={images} setViewModal={setViewModal} />  
             </Modal>
         }
     </>

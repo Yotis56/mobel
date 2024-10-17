@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import logo from '../../assets/images/logo.png'
 import styles from './styles.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,18 +12,29 @@ const Navbar = () => {
     const handleCloseMenu = () => {
         setIsMenuOpen(false)
     }
+    const location = useLocation()
 
     return (
        <nav className={styles.navbar}>
             <div className={styles.logoContainer}>
-                <img src={logo} alt="mobel" />
+                <Link to='/'>
+                    <img src={logo} alt="mobel" />
+                </Link>
             </div>
             <div className={ isMenuOpen ? `${styles.navbarContainer} ${styles.active}` : styles.navbarContainer }>
                 <ul>
-                    <li>Home</li>
-                    <li><Link to='/in-construction'>Proyectos</Link></li>
-                    <li><Link to='/in-construction'>Catálogos</Link></li>
-                    <li><a href="#contact">Contáctanos</a></li>
+                    <li onClick={handleCloseMenu}> 
+                        <Link to={location.pathname.includes('/hogar') ? '/hogar' : '/corporativo'}>Home</Link>
+                    </li>
+                    <li onClick={handleCloseMenu}>
+                        <Link to={ location.pathname.includes('/hogar') ? '/hogar/proyectos' : '/corporativo/proyectos'}>Proyectos</Link>
+                    </li>
+                    <li onClick={handleCloseMenu}>
+                        <Link to='/in-construction'>Catálogos</Link>
+                    </li>
+                    <li onClick={handleCloseMenu}>
+                        <Link to={location.pathname.includes('/hogar') ? '/hogar#contact' : '/corporativo#contact'}>Contáctanos</Link>
+                    </li>
                 </ul>
                 <span className={`material-symbols-outlined ${styles.closeIcon}`} onClick={handleCloseMenu}>close</span>
             </div>
