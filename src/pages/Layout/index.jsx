@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser'
 import { Navbar } from "../../components/Navbar"
 import { Footer } from "../../components/Footer/Footer"
 import { AppContext } from "../../context/AppContext"
+import { WaButton } from '../../components/WaButton/WaButton'
 
 const Layout = () => {
     
@@ -29,6 +30,7 @@ const Layout = () => {
             <Navbar />
             <Outlet />
             <Footer />
+            <WaButton />
         </AppContext.Provider>
     )
 }

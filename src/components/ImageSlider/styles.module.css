@@ -1,7 +1,7 @@
 .container {
     width: 85vw;
-    height: 50vh;
-    border-radius: 5px;
+    height: 86vh;
+    border-radius: 8px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
 .container img {
     position: absolute;
     height: 100%;
-    max-width: 85vw;
+    /* max-width: 85vw; */
 }
 /* Tengo que cambiar el alto y ancho para ajustarme a una relación de aspecto específica. Y recortar todas las fotos para que tengan esa relación de aspecto. Y además, se vea lo que quiero mostrar. */
 .next,

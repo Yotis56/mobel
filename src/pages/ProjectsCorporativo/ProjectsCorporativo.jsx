@@ -1,16 +1,17 @@
-import exampleImage from '../../assets/images/OfficeHero.jpg'
-import { Header } from "../../components/Header/Header"
+import exampleImage from '../../assets/images/Office2.jpg'
+import { Hero } from "../../components/Hero/Hero"
 import { Projects } from "../../components/Projects/Projects"
 import { projectsListCorporativo } from './projectsListCorporativo'
 
 const ProjectsCorporativo = () => {
-    const title = 'título de ejemplo'
-    const paragraph = 'lorem ipsum dolor sit amet'
+    const title = 'Ambientes que Marcan la Diferencia'
+    const paragraph = 'Transformamos tus ideas en espacios funcionales y sofisticados, adaptados a las necesidades de tu negocio'
     return (
         <>
-            <Header image={exampleImage} title={title} paragraph={paragraph} />
+            <Hero image={exampleImage} title={title} paragraph={paragraph} />
             <Projects projectsList={projectsListCorporativo} title='Proyectos Corporativos'/>
         </>
     )
 }
+
 export {ProjectsCorporativo}

@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-const Header = ({ image, title, paragraph }) => {
+const Hero = ({ image, title, paragraph }) => {
     return (
         <div className={styles.headerContainer}>
             <div className={styles.hero}>
@@ -16,4 +16,4 @@ const Header = ({ image, title, paragraph }) => {
     )
 }
 
-export { Header }
+export { Hero }

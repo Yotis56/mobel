@@ -34,7 +34,7 @@ const Contact = () => {
             <div className={styles.contactLeft}>
                 {
                     width > 650 &&
-                    <img src={contactImg} alt="Mujer hablando al teléfono" />
+                    <img src={contactImg} alt="Mujer hablando al teléfono" loading="lazy" />
                 }
             </div>
             <div className={styles.contactRight}>
