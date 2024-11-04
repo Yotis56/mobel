@@ -1,31 +1,32 @@
-import styles from './styles.module.css'
 import instagramIcon from '../../assets/images/instagram.png'
 import tiktokIcon from '../../assets/images/tik-tok.png'
-import mobbelIcon from '../../assets/images/logo.png'
+import styles from './styles.module.css'
+import { LuMail, LuPhone, LuMapPin } from "react-icons/lu"
+// import mobbelIcon from '../../assets/images/logo.png'
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>    
-            <div className={styles.logoContainer}>
+            {/* <div className={styles.logoContainer}>
                 <img src={mobbelIcon} alt="" />
-            </div>
+            </div> */}
             <div className={styles.linksContainer}>
                 <div className={styles.linkContainer}>
-                    <span className="material-symbols-outlined">mail</span>
+                    <LuMail className={styles.icon}/>
                     <a href="mailto:info@mobel.com.co">info@mobel.com.co</a>
                 </div>
                 <div className={styles.linkContainer}>
-                    <span className="material-symbols-outlined">call</span>
+                    <LuPhone className={styles.icon}/>
                     <a href="tel:3222273699">322 2273699</a>
                 </div>
                 <div className={styles.linkContainer}>
-                    <span className="material-symbols-outlined">location_on</span>
+                    <LuMapPin className={styles.icon} />
                     <span>Bogotá, Colombia</span>
                 </div>
             </div> 
             <div className={styles.mediaContainer}>
-                <p>síguenos en nuestras redes sociales:</p>
-                <div className="mediaLinks">
+                {/* <p>síguenos en nuestras redes sociales:</p> */}
+                <div className={styles.mediaLinks}>
                     <a href="https://www.instagram.com/mobel_studio_sas/">
                         <img className={styles.socialIcon} src={instagramIcon} alt="instagram Icon" loading="lazy" />
                     </a>

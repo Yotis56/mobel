@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
+import { wrap } from "popmotion"
+import { LuChevronLeft, LuChevronRight, LuX } from "react-icons/lu";
+
 import styles from './styles.module.css'
 
 const variants = {
@@ -82,15 +84,15 @@ export const ImageSlider = ({ images, setViewModal = null}) => {
             />
           </AnimatePresence>
           <div className={styles.next} onClick={() => paginate(1)}>
-            <span className="material-symbols-outlined">arrow_forward_ios</span>
+            <LuChevronRight />
           </div>
           <div className={styles.prev} onClick={() => paginate(-1)}>
-            <span className="material-symbols-outlined">arrow_back_ios</span>
+            <LuChevronLeft />
           </div>
           {
             setViewModal && 
             <div className={styles.close} onClick={() => setViewModal(false)}>
-              <span className="material-symbols-outlined">close</span>
+              <LuX />
             </div>
 
           }

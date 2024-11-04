@@ -1,13 +1,24 @@
-import chico1 from '../../assets/projects/aptoChico/chico1.jpg'
-import chico2 from '../../assets/projects/aptoChico/chico2.jpg'
-import chico3 from '../../assets/projects/aptoChico/chico3.jpg'
-import chico4 from '../../assets/projects/aptoChico/chico4.jpg'
-import chico5 from '../../assets/projects/aptoChico/chico5.jpg'
+const BASE_URL = 'https://mobel.com.co/assets/images/projectsHogar'
 
-
-export const projectsListHogar = [
+const projectsHogar = [
     {
-        title: 'Apartamento Chicó', 
-        photos: [ chico1, chico2, chico3, chico4, chico5 ]
-    }
+        id: 1,
+        name: 'aptoChico',
+        title: 'Apto Chicó',
+        folderName: 'aptoChico', 
+        fileName: 'chico',
+        nubmerOfItems: 5, 
+    },
 ]
+
+export const projectsListHogar =  Array.from(projectsHogar, (project) => {
+    const emptyArray = []
+    for (let i = 1; i < project.nubmerOfItems; i++) {
+        emptyArray.push(`${BASE_URL}/${project.folderName}/${project.fileName}${i}.jpg`)
+    }
+    return {
+        id: project.id, 
+        title: project.title, 
+        photos: emptyArray
+    }
+})

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import logo from '../../assets/images/logo.png'
 import styles from './styles.module.css'
 import { Link, useLocation } from 'react-router-dom'
+import { LuMenu, LuX } from "react-icons/lu"
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,17 +30,19 @@ const Navbar = () => {
                     <li onClick={handleCloseMenu}>
                         <Link to={ location.pathname.includes('/hogar') ? '/hogar/proyectos' : '/corporativo/proyectos'}>Proyectos</Link>
                     </li>
-                    <li onClick={handleCloseMenu}>
+                    {/* <li onClick={handleCloseMenu}>
                         <Link to='/in-construction'>Catálogos</Link>
-                    </li>
+                    </li> */}
                     <li onClick={handleCloseMenu}>
                         <Link to={location.pathname.includes('/hogar') ? '/hogar#contact' : '/corporativo#contact'}>Contáctanos</Link>
                     </li>
                 </ul>
-                <span className={`material-symbols-outlined ${styles.closeIcon}`} onClick={handleCloseMenu}>close</span>
+                <div onClick={handleCloseMenu}>
+                    <LuX className={styles.closeIcon}/>
+                </div>
             </div>
-            <div className={styles.iconContainer}>
-                <span className={`material-symbols-outlined ${isMenuOpen ? styles.displayNone : styles.menuIcon}`} onClick={handleOpenMenu}>menu</span>
+            <div className={styles.iconContainer} onClick={handleOpenMenu}>
+                <LuMenu className={`${isMenuOpen ? styles.displayNone : styles.menuIcon}`} />
             </div>
        </nav>
     )

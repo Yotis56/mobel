@@ -17,20 +17,22 @@
 .next,
 .prev, 
 .close {
-    top: calc(50% - 20px);
+    top: calc(50% - 25px);
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 35px;
     z-index: 2;
-    color: white;
-    text-shadow: -1px 0px 1px black;
+    color: var(--black-grey);
+    /* text-shadow: -1px 0px 1px black; */
+    text-shadow: -1px 0px 1px rgb(255, 254, 254);
+
 }
 
 .next {
@@ -50,5 +52,9 @@
 @media screen and (min-width: 650px) {
     .container {
         height: 98vh;
+    }
+    .next, .prev, .close {
+        text-shadow: -1px 0px 1px black;
+        color: white;
     }
 }

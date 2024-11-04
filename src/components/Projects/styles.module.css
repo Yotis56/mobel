@@ -1,8 +1,16 @@
 .projectsContainer{
-    margin: 0 8%;
+
+    padding: 50px 8% 0;
+    background-color: #ecebeb;
 }
-.projectsContainer h3{
+.projectsContainer > p {
+    font-size: 14px;
+    text-align: justify;
+}
+.projectsContainer h2{
     text-align: center;
+    margin: 0;
+    padding-bottom: 25px;
     font-weight: 500;
     color: var(--black-grey);
 }
